@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'app-theme.dart';
 
-class Header extends StatelessWidget {
+class HomePageHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(

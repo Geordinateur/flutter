@@ -38,7 +38,7 @@ class _MessageListState extends State<MessageList> {
             itemBuilder: (BuildContext context, int index) {
               // Récupérer les messages grace à l'index
               var message = messages[index];
-              return Text("Id: ${message.id} - Titre : ${message.title}");
+              return Text("Id: ${message.id} - Titre : ${message.message}");
             });
   }
 }
