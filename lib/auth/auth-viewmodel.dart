@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'dart:convert' as convert;
 import 'package:http/http.dart' as http;
 import 'package:tpx/app-validator.dart';
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 
 class AuthViewModel with ChangeNotifier {
 
@@ -36,12 +37,17 @@ class AuthViewModel with ChangeNotifier {
       //Navigator.pushNamed(context, "/message");
       // Todo stocker le token quelque part
       // Proposition : le mettre dans un static
+      // Create storage
+      final storage = new FlutterSecureStorage();
+      // Write value
+      await storage.write(key: 'jwt', value: responseBodyJson["data"]);
+      Navigator.pushNamed(context, "/messages");
     }
     // Si pas ok
     else {
-      AppValidator.showMyDialog(context, "Authentification", responseBodyJson["message"]);
       // Message d'erreur
-      print(responseBodyJson);
+      AppValidator.showMyDialog(context, "Authentification", responseBodyJson["message"]);
+      //print(responseBodyJson);
     }
   }
 
