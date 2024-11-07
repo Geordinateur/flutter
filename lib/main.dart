@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tpx/message/message-list.dart';
-import 'home-page.dart';
+import 'message/message-page.dart';
 import 'auth/login.dart';
 
 void main() {
@@ -18,9 +17,9 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      initialRoute: "/",
+      initialRoute: "/login",
       routes: {
-        "/" : (context) => LoginPage(),
+        "/" : (context) => MessagePage(),
         '/login' : (context) => LoginPage(),
         '/home' : (context) => MessagePage(),
       },
